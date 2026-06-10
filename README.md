@@ -1,69 +1,103 @@
-# 🔐 Password Generator
+# 📚 Library Management System
 
-A simple Java-based Password Generator that creates secure passwords based on user preferences. Users can specify the password length and choose whether to include numbers and special characters.
+A SQL-based Library Management System designed to manage books, members, and borrowing records efficiently. This project demonstrates database design, table relationships, and SQL queries for managing library operations.
 
 ## 🚀 Features
 
-* Generate passwords of custom length
-* Option to include numbers
-* Option to include special characters
-* Uses uppercase and lowercase letters
-* Easy-to-use console interface
+* Manage book records
+* Manage library members
+* Track issued and returned books
+* Maintain borrowing history
+* Use foreign key relationships for data integrity
 
 ## 🛠️ Technologies Used
 
-* Java
-* Scanner Class
-* Random Class
+* MySQL
+* SQL
 
-## 📋 How It Works
+## 📂 Database Structure
 
-1. Enter the desired password length.
-2. Choose whether to include special characters.
-3. Choose whether to include numbers.
-4. The program generates a password based on the selected options.
+### Books Table
 
-## 💻 Sample Output
+Stores information about books available in the library.
 
-```text
-Enter password length: 10
-Include special characters? (yes/no): yes
-Include numbers? (yes/no): yes
+Fields:
 
-Generated Password: AbcDef7@X
-```
+* book_id
+* title
+* author
+* genre
+* available_copies
 
-## ▶️ How to Run
+### Members Table
 
-Compile the program:
+Stores member details.
 
-```bash
-javac PasswordGenerator.java
-```
+Fields:
 
-Run the program:
+* member_id
+* name
+* email
+* phone
 
-```bash
-java PasswordGenerator
-```
+### BorrowedBooks Table
 
-## 📂 Project Structure
+Tracks book issue and return records.
 
-```text
-PasswordGenerator.java
-README.md
+Fields:
+
+* borrow_id
+* member_id
+* book_id
+* issue_date
+* return_date
+
+## 🔗 Database Relationships
+
+* One member can borrow multiple books.
+* One book can be borrowed by multiple members over time.
+* Foreign keys ensure referential integrity between tables.
+
+## 📋 Sample Operations
+
+* Create database and tables
+* Insert book records
+* Insert member records
+* Issue books to members
+* Track return status
+* View available books
+
+Example Query:
+
+```sql
+SELECT * FROM Books;
 ```
 
 ## 🎯 Learning Outcomes
 
-* Java Fundamentals
-* User Input Handling with Scanner
-* Random Number Generation
-* String Manipulation
-* Conditional Logic
+* Database Design
+* SQL DDL Commands (CREATE, ALTER)
+* SQL DML Commands (INSERT, SELECT)
+* Primary Keys
+* Foreign Keys
+* Relational Database Concepts
+
+## ▶️ How to Run
+
+1. Open MySQL Workbench.
+2. Create a new SQL script.
+3. Copy and paste the project code.
+4. Execute the script.
+5. Run queries to view and manage library data.
 
 ## 👩‍💻 Author
 
 Mallangi Kalyani
 
-GitHub: https://github.com/mallangikalyani
+📧 Email: [malangikalyani@gmail.com](mailto:malangikalyani@gmail.com)
+
+🐙 GitHub: https://github.com/mallangikalyani
+
+---
+
+⭐ This project was created for learning and practicing SQL database management concepts.
